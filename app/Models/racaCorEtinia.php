@@ -9,7 +9,7 @@ class racaCorEtinia extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'descricao_racaCorEtinia'
+        'descricao_raca_cor_etinia'
     ];
 
     public function pessoas()

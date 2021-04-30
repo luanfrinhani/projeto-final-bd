@@ -9,6 +9,6 @@ class Distrito extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'descricao_distritos'
+        'descricao_distrito'
     ];
 }

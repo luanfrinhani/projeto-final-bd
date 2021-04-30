@@ -9,7 +9,7 @@ class PlanoSaude extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'descricao_planoSaude'
+        'descricao_plano_saude'
     ];
 
     public function pessoas()

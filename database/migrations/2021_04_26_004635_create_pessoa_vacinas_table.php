@@ -23,6 +23,9 @@ class CreatePessoaVacinasTable extends Migration
 
             $table->foreign('numero_sus')->references('numero_sus')->on('pessoas')->onDelete('cascade');
 
+
+
+
             $table->index('lote_vacina');
 
             $table->timestamps();

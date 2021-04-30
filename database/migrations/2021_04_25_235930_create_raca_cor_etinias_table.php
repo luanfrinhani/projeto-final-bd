@@ -15,7 +15,7 @@ class CreateRacaCorEtiniasTable extends Migration
     {
         Schema::create('raca_cor_etinias', function (Blueprint $table) {
             $table->bigIncrements('id_raca_cor_etinia');
-            $table->string('descricao_racaCorEtinia',45)->nullable(false);
+            $table->string('descricao_raca_cor_etinia',45)->nullable(false);
             $table->timestamps();
         });
     }

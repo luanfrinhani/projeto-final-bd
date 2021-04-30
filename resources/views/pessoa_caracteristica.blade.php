@@ -172,7 +172,6 @@
 
         .container-contact100 {
             width: 100%;
-            min-height: 100vh;
             display: -webkit-box;
             display: -webkit-flex;
             display: -moz-box;
@@ -180,8 +179,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            padding: 15px;
+            margin-top: 100px;
             background: #e6e6e6;
 
         }
@@ -191,7 +189,8 @@
             background: #fff;
             border-radius: 10px;
             overflow: hidden;
-            padding: 62px 55px 90px 55px;
+            margin-top: 45px;
+            margin-bottom: 45px;
         }
 
 
@@ -232,6 +231,9 @@
             border-radius: 13px;
             padding: 10px 30px 9px 22px;
             margin-bottom: 20px;
+            margin-right: 25px;
+            margin-left: 25px;
+
         }
 
         .rs1-wrap-input100 {
@@ -3718,7 +3720,7 @@
             bottom: 0px;
         }
     </style>
-    <title>Contact V5</title>
+    <title>Cadastro Características</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -3745,229 +3747,168 @@
 
 </head>
 <body>
-
-
 <div class="container-contact100">
     <div class="wrap-contact100">
-        <form class="contact100-form validate-form">
-				<span class="contact100-form-title">
-					Contact Us
+        <form class="contact100-form validate-form" action="{{route('estadocivil')}}" method="POST">
+				@csrf
+                <span class="contact100-form-title">
+					Cadastro Estado Civil
 				</span>
 
-            <div class="wrap-input100 validate-input bg1" data-validate="Entre com o número do SUS">
-                <span class="label-input100">Número do SUS*</span>
-                <input class="input100" type="text" name="numero_sus" >
-            </div>
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com seu CPF">
-                <span class="label-input100">CPF *</span>
-                <input class="input100" type="text" name="cpf" >
-            </div>
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com seu nome">
-                <span class="label-input100">Nome Completo*</span>
-                <input class="input100" type="text" name="nome" >
-            </div>
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com sua data de nascimento">
-                <span class="label-input100">Data Nascimento*</span>
-                <input class="input100" type="date" name="data_nascimento" >
-            </div>
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com o nome da mãe">
-                <span class="label-input100">Nome da mãe*</span>
-                <input class="input100" type="text" name="nome_mae" >
-            </div>
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com seu sexo genérico">
-                <span class="label-input100">Sexo genérico*</span>
-                <input class="input100" type="text" name="sexo_genetico" >
-            </div>
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com sua rua">
-                <span class="label-input100">Rua*</span>
-                <input class="input100" type="text" name="rua" >
-            </div>
-
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com o número da sua casa">
-                <span class="label-input100">Número*</span>
-                <input class="input100" type="number" name="numero" >
-            </div>
-
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com o seu bairro">
-                <span class="label-input100">Bairro*</span>
-                <input class="input100" type="text" name="bairro" >
-            </div>
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com o seu cep">
-                <span class="label-input100">CEP*</span>
-                <input class="input100" type="text" name="cep" >
-            </div>
-
-
-            <div class="wrap-input100 input100-select bg1">
+            <div class="wrap-input100 validate-input bg1" data-validate="Entre com o estado civil">
                 <span class="label-input100">Estado Civil*</span>
-                <div>
-                    <select class="js-select2" name="descricao_estado_civil">
-                        <option value ="" selected disabled hidden>Selecione</option>
-                        @foreach($estado_civil as $ec)
-                            <option value="{{$ec->id_estado_civil}}">{{$ec->descricao_estado_civil}}</option>
-                        @endforeach
-                    </select>
-                    <div class="dropDownSelect2"></div>
-                </div>
+                <input class="input100" type="text" name="descricao_estado_civil">
             </div>
 
-
-            <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Escolaridade*</span>
-                <div>
-                    <select class="js-select2" name="descricao_escolaridade">
-                        <option value ="" selected disabled hidden>Selecione</option>
-                        <option value="ensino_fundamental_completo">Ensino Fundamental Completo</option>
-                        <option value="ensino_fundamental_incompleto">Ensino Fundamental Incompleto</option>
-                        <option value="ensino_medio_completo">Ensino Médio Completo</option>
-                        <option value="ensino_medio_incompleto">Ensino Médio Incompleto</option>
-                        <option value="ensino_superior_completo">Ensino Superior Completo</option>
-                        <option value="ensino_superior_incompleto">Ensino Superior Incompleto</option>
-                        <option value="ensino_tecnico_completo">Ensino Técnico Completo</option>
-                        <option value="ensino_tecnico_incompleto">Ensino Técnico Incompleto</option>
-                    </select>
-                    <div class="dropDownSelect2"></div>
-                </div>
-            </div>
-
-
-            <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Religião*</span>
-                <div>
-                    <select class="js-select2" name="descricao_religiao">
-                        <option value ="" selected disabled hidden>Selecione</option>
-                        <option value="evangelico">Evangelico</option>
-                        <option value="catolico">Católico</option>
-                        <option value="sem_religiao">Sem Religião</option>
-                        <option value="espirita">Espírita</option>
-                        <option value="outros">Outros</option>
-                    </select>
-                    <div class="dropDownSelect2"></div>
-                </div>
-            </div>
-
-
-            <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Raça, cor e etinia*</span>
-                <div>
-                    <select class="js-select2" name="descricao_raca_cor_etnia">
-                        <option value ="" selected disabled hidden>Selecione</option>
-                        <option value="branco">Branco</option>
-                        <option value="pardo">Pardo</option>
-                        <option value="preto">Preto</option>
-                        <option value="amerelo">Amarelo</option>
-                        <option value="indigena">Indígena</option>
-                    </select>
-                    <div class="dropDownSelect2"></div>
-                </div>
-            </div>
-
-
-            <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Plano de Saúde*</span>
-                <div>
-                    <select class="js-select2" name="descricao_plano_saude">
-                        <option value ="" selected disabled hidden>Selecione</option>
-                        <option value="particular">Particular</option>
-                        <option value="sus">SUS</option>
-                    </select>
-                    <div class="dropDownSelect2"></div>
-                </div>
-            </div>
-
-            <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Alergia*</span>
-                <div>
-                    <select class="js-select2" name="descricao_alergia">
-                        <option value ="" selected disabled hidden>Selecione</option>
-                        <option value="derivados_ovo">Derivados de ovo</option>
-                        <option value="derivados_leite">Derivados de leite</option>
-                        <option value="analgesicos_antiinflamatorios">Analgésicos e anti-inflamatórios</option>
-                        <option value="antibioticos">Antibióticos</option>
-                        <option value="quimioterapicos">Quimioterápicos</option>
-
-                    </select>
-                    <div class="dropDownSelect2"></div>
-                </div>
-            </div>
-
-            <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Distrito*</span>
-                <div>
-                    <select class="js-select2" name="descricao_distrito">
-                        <option value ="" selected disabled hidden>Selecione</option>
-                        <option value="distrito_a">Distrito A</option>
-                        <option value="distrito_b">Distrito B</option>
-                        <option value="distrito_c">Distrito C</option>
-                        <option value="distrito_d">Distrito D</option>
-                        <option value="distrito_e">Distrito E</option>
-                    </select>
-                    <div class="dropDownSelect2"></div>
-                </div>
-            </div>
-
-
-            <div class="w-full dis-none js-show-service">
-                <div class="wrap-contact100-form-radio">
-                    <span class="label-input100">What type of products do you sell?</span>
-
-                    <div class="contact100-form-radio m-t-15">
-                        <input class="input-radio100" id="radio1" type="radio" name="type-product" value="physical" checked="checked">
-                        <label class="label-radio100" for="radio1">
-                            Phycical Products
-                        </label>
-                    </div>
-
-                    <div class="contact100-form-radio">
-                        <input class="input-radio100" id="radio2" type="radio" name="type-product" value="digital">
-                        <label class="label-radio100" for="radio2">
-                            Digital Products
-                        </label>
-                    </div>
-
-                    <div class="contact100-form-radio">
-                        <input class="input-radio100" id="radio3" type="radio" name="type-product" value="service">
-                        <label class="label-radio100" for="radio3">
-                            Services Consulting
-                        </label>
-                    </div>
-                </div>
-
-{{--                <div class="wrap-contact100-form-range">--}}
-{{--                    <span class="label-input100">Budget *</span>--}}
-
-{{--                    <div class="contact100-form-range-value">--}}
-{{--                        $<span id="value-lower">610</span> - $<span id="value-upper">980</span>--}}
-{{--                        <input type="text" name="from-value">--}}
-{{--                        <input type="text" name="to-value">--}}
-{{--                    </div>--}}
-
-{{--                    <div class="contact100-form-range-bar">--}}
-{{--                        <div id="filter-bar"></div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-            </div>
-
-
-            <div class="container-contact100-form-btn">
-                <button class="contact100-form-btn">
+            <button class="contact100-form-btn" type="submit">
 						<span>
 							Submit
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 						</span>
-                </button>
-            </div>
+            </button>
         </form>
     </div>
+</div>
+<div class="container-contact100">
+        <div class="wrap-contact100">
+        <form class="contact100-form validate-form"  action="{{route('escolaridade')}}" method="POST">
+            @csrf
+                <span class="contact100-form-title">
+                    Cadastro Escolaridade
+                </span>
+
+            <div class="wrap-input100 validate-input bg1" data-validate="Entre com a escolaridade">
+                <span class="label-input100">Escolaridade*</span>
+                <input class="input100" type="text" name="descricao_escolaridade" >
+            </div>
+
+            <button class="contact100-form-btn" type="submit">
+                        <span>
+                            Submit
+                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                        </span>
+            </button>
+        </form>
+        </div>
+</div>
+
+<div class="container-contact100">
+    <div class="wrap-contact100">
+        <form class="contact100-form validate-form"  action="{{route('religiao')}}" method="POST">
+            @csrf
+                <span class="contact100-form-title">
+                    Cadastro Religião
+                </span>
+
+            <div class="wrap-input100 validate-input bg1" data-validate="Entre com a religião">
+                <span class="label-input100">Religião*</span>
+                <input class="input100" type="text" name="descricao_religiao" >
+            </div>
+
+            <button class="contact100-form-btn" type="submit">
+                        <span>
+                            Submit
+                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                        </span>
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="container-contact100">
+    <div class="wrap-contact100">
+        <form class="contact100-form validate-form"  action="{{route('racaCorEtnia')}}" method="POST">
+            @csrf
+                <span class="contact100-form-title">
+                    Cadastro Raça, Cor e Etnia
+                </span>
+
+            <div class="wrap-input100 validate-input bg1" data-validate="Entre com a raça, cor e etnia">
+                <span class="label-input100">Raça, Cor Etnia*</span>
+                <input class="input100" type="text" name="descricao_raca_cor_etinia" >
+            </div>
+
+            <button class="contact100-form-btn" type="submit">
+                        <span>
+                            Submit
+                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                        </span>
+            </button>
+        </form>
+    </div>
+</div>
+
+
+<div class="container-contact100">
+    <div class="wrap-contact100">
+        <form class="contact100-form validate-form"  action="{{route('planosaude')}}" method="POST">
+            @csrf
+                <span class="contact100-form-title">
+                    Cadastro Plano de Saúde
+                </span>
+
+            <div class="wrap-input100 validate-input bg1" data-validate="Entre com o plano de saúde">
+                <span class="label-input100">Plano de Saúde*</span>
+                <input class="input100" type="text" name="descricao_plano_saude" >
+            </div>
+
+            <button class="contact100-form-btn" type="submit">
+                        <span>
+                            Submit
+                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                        </span>
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="container-contact100">
+    <div class="wrap-contact100">
+        <form class="contact100-form validate-form"  action="{{route('alergia')}}" method="POST">
+            @csrf
+                <span class="contact100-form-title">
+                    Cadastro Alergia
+                </span>
+
+            <div class="wrap-input100 validate-input bg1" data-validate="Entre com a alergia">
+                <span class="label-input100">Alergia*</span>
+                <input class="input100" type="text" name="descricao_alergia" >
+            </div>
+
+            <button class="contact100-form-btn" type="submit">
+                        <span>
+                            Submit
+                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                        </span>
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="container-contact100">
+    <div class="wrap-contact100">
+        <form class="contact100-form validate-form"  action="{{route('distrito')}}" method="POST">
+            @csrf
+                <span class="contact100-form-title">
+                    Cadastro Distrito
+                </span>
+
+            <div class="wrap-input100 validate-input bg1" data-validate="Entre com o distrito">
+                <span class="label-input100">Distrito*</span>
+                <input class="input100" type="text" name="descricao_distrito" >
+            </div>
+
+            <button class="contact100-form-btn" type="submit">
+                        <span>
+                            Submit
+                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                        </span>
+            </button>
+        </form>
+    </div>
+</div>
+
+
 </div>
 
 

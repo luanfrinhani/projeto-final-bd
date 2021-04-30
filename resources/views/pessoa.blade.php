@@ -3749,7 +3749,8 @@
 
 <div class="container-contact100">
     <div class="wrap-contact100">
-        <form class="contact100-form validate-form">
+        <form class="contact100-form validate-form" method="POST" action="{{route('pessoa')}}">
+            @csrf
 				<span class="contact100-form-title">
 					Cadastro Pessoa
 				</span>
@@ -3767,6 +3768,11 @@
             <div class="wrap-input100 validate-input bg1" data-validate = "Entre com seu nome">
                 <span class="label-input100">Nome Completo*</span>
                 <input class="input100" type="text" name="nome" >
+            </div>
+
+            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com seu nome">
+                <span class="label-input100">Idade*</span>
+                <input class="input100" type="number" name="idade" >
             </div>
 
             <div class="wrap-input100 validate-input bg1" data-validate = "Entre com sua data de nascimento">
@@ -3810,7 +3816,7 @@
             <div class="wrap-input100 input100-select bg1">
                 <span class="label-input100">Estado Civil*</span>
                 <div>
-                    <select class="js-select2" name="descricao_estado_civil">
+                    <select class="js-select2" name="id_estado_civil">
                         <option value ="" selected disabled hidden>Selecione</option>
                         @foreach($estado_civil as $ec)
                             <option value="{{$ec->id_estado_civil}}">{{$ec->descricao_estado_civil}}</option>
@@ -3824,7 +3830,7 @@
             <div class="wrap-input100 input100-select bg1">
                 <span class="label-input100">Escolaridade*</span>
                 <div>
-                    <select class="js-select2" name="descricao_escolaridade">
+                    <select class="js-select2" name="id_escolaridade">
                         <option value ="" selected disabled hidden>Selecione</option>
                         @foreach($escolaridade as $escolaridades)
                             <option value="{{$escolaridades->id_escolaridade}}">{{$escolaridades->descricao_escolaridade}}</option>
@@ -3839,7 +3845,7 @@
             <div class="wrap-input100 input100-select bg1">
                 <span class="label-input100">Religião*</span>
                 <div>
-                    <select class="js-select2" name="descricao_religiao">
+                    <select class="js-select2" name="id_religiao">
                         <option value ="" selected disabled hidden>Selecione</option>
                         @foreach($religiao as $religiaos)
                             <option value="{{$religiaos->id_religiao}}">{{$religiaos->descricao_religiao}}</option>
@@ -3854,7 +3860,7 @@
             <div class="wrap-input100 input100-select bg1">
                 <span class="label-input100">Raça, cor e etinia*</span>
                 <div>
-                    <select class="js-select2" name="descricao_raca_cor_etinia">
+                    <select class="js-select2" name="id_raca_cor_etinia">
                         <option value ="" selected disabled hidden>Selecione</option>
                         @foreach($raca_cor_etinia as $raca_cor_etinias)
                             <option value="{{$raca_cor_etinias->id_raca_cor_etinia}}">{{$raca_cor_etinias->descricao_raca_cor_etinia}}</option>
@@ -3868,7 +3874,7 @@
             <div class="wrap-input100 input100-select bg1">
                 <span class="label-input100">Plano de Saúde*</span>
                 <div>
-                    <select class="js-select2" name="descricao_plano_saude">
+                    <select class="js-select2" name="id_plano_saude">
                         <option value ="" selected disabled hidden>Selecione</option>
                         @foreach($plano_saude as $plano_saudes)
                             <option value="{{$plano_saudes->id_plano_saude}}">{{$plano_saudes->descricao_plano_saude}}</option>
@@ -3882,7 +3888,7 @@
             <div class="wrap-input100 input100-select bg1">
                 <span class="label-input100">Alergia*</span>
                 <div>
-                    <select class="js-select2" name="descricao_alergia">
+                    <select class="js-select2" name="id_alergia">
                         <option value ="" selected disabled hidden>Selecione</option>
                         @foreach($alergia as $alergias)
                             <option value="{{$alergias->id_alergia}}">{{$alergias->descricao_alergia}}</option>
@@ -3897,7 +3903,7 @@
             <div class="wrap-input100 input100-select bg1">
                 <span class="label-input100">Distrito*</span>
                 <div>
-                    <select class="js-select2" name="descricao_distrito">
+                    <select class="js-select2" name="id_distrito">
                         <option value ="" selected disabled hidden>Selecione</option>
                         @foreach($distrito as $distritos)
                             <option value="{{$distritos->id_distrito}}">{{$distritos->descricao_distrito}}</option>
@@ -3908,11 +3914,11 @@
                 </div>
             </div>
 
-            </div>
+{{--            </div>--}}
 
 
             <div class="container-contact100-form-btn">
-                <button class="contact100-form-btn">
+                <button class="contact100-form-btn" type="submit">
 						<span>
 							Submit
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>

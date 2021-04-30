@@ -17,6 +17,7 @@ class CreatePessoasTable extends Migration
             $table->string('numero_sus',15)->unique()->primary();
             $table->string('cpf',11)->unique();
             $table->string('nome',45)->nullable(false);
+            $table->integer('idade')->nullable(false);
             $table->date('data_nascimento')->nullable(false);
             $table->string('nome_mae',45)->nullable(false);
             $table->string('sexo_genetico',1)->nullable(false);

@@ -6,9 +6,11 @@ use App\Models\Alergia;
 use App\Models\Distrito;
 use App\Models\Escolaridade;
 use App\Models\EstadoCivil;
+use App\Models\Pessoa;
 use App\Models\PlanoSaude;
 use App\Models\racaCorEtinia;
 use App\Models\Religiao;
+use http\Env\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -96,6 +98,20 @@ class Controller extends BaseController
 
         return redirect(route('admin'));
 
+    }
+
+    public function cadastrarPessoa(Http\Request $request)
+    {
+        $data = $request->all();
+
+        $pessoa = Pessoa::create($data);
+
+        return redirect((route('cadastro')));
+    }
+
+    public function buscar()
+    {
+        return view('buscar');
     }
 
 

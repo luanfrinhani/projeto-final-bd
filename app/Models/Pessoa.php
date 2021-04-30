@@ -10,7 +10,7 @@ class Pessoa extends Model
     use HasFactory;
 
     protected $fillable = [
-        'numero_sus', 'cpf', 'nome', 'data_nascimento', 'nome_mae', 'sexo_genetico',
+        'numero_sus', 'cpf', 'nome', 'idade', 'data_nascimento', 'nome_mae', 'sexo_genetico',
         'rua','numero','bairro','cep', 'id_estado_civil', 'id_escolaridade', 'id_religiao',
         'id_raca_cor_etinia', 'id_plano_saude', 'id_alergia','id_distrito'
     ];

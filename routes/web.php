@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','\App\Http\Controllers\Controller@cadastroPessoa');
+Route::get('/','\App\Http\Controllers\Controller@cadastroPessoa')->name('cadastro');
 Route::get('/admin','\App\Http\Controllers\Controller@cadastroCaracteristica')->name('admin');
+
 
 Route::post('/admin/estadocivil','\App\Http\Controllers\Controller@cadastrarEstadoCivil')->name('estadocivil');
 Route::post('/admin/escolaridade','\App\Http\Controllers\Controller@cadastrarEscolaridade')->name('escolaridade');
@@ -23,3 +24,5 @@ Route::post('/admin/racaCorEtnia','\App\Http\Controllers\Controller@cadastrarRac
 Route::post('/admin/distrito','\App\Http\Controllers\Controller@cadastrarDistrito')->name('distrito');
 Route::post('/admin/alergia','\App\Http\Controllers\Controller@cadastrarAlergia')->name('alergia');
 Route::post('/admin/planosaude','\App\Http\Controllers\Controller@cadastrarPlanoSaude')->name('planosaude');
+Route::post('/pessoa','\App\Http\Controllers\Controller@cadastrarPessoa')->name('pessoa');
+

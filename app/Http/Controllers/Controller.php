@@ -103,8 +103,8 @@ class Controller extends BaseController
     public function cadastrarPessoa(Http\Request $request)
     {
         $data = $request->all();
-
         $pessoa = Pessoa::create($data);
+
 
         return redirect((route('cadastro')));
     }
@@ -113,6 +113,4 @@ class Controller extends BaseController
     {
         return view('buscar');
     }
-
-
 }

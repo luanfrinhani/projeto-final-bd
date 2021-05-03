@@ -16,12 +16,13 @@ class CreatePessoaVacinasTable extends Migration
         Schema::create('pessoa_vacinas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('numero_sus',15)->nullable(false);
-            $table->bigInteger('lote_vacina')->nullable(false);
+            $table->unsignedBigInteger('lote_vacina')->nullable(false);
             $table->date('data_dose')->nullable(false);
             $table->bigInteger('dose')->nullable(false);
 
 
             $table->foreign('numero_sus')->references('numero_sus')->on('pessoas')->onDelete('cascade');
+            $table->foreign('lote_vacina')->references('lote_vacina')->on('vacina_lotes')->onDelete('cascade');
 
 
 

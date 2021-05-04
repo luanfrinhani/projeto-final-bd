@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Alergia;
 use App\Models\Distrito;
+use App\Models\Doenca;
 use App\Models\Escolaridade;
 use App\Models\EstadoCivil;
+use App\Models\Fabricante;
 use App\Models\Pessoa;
 use App\Models\PlanoSaude;
 use App\Models\racaCorEtinia;
 use App\Models\Religiao;
+use App\Models\Vacina;
+use Dotenv\Repository\Adapter\EnvConstAdapter;
 use http\Env\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -111,6 +115,34 @@ class Controller extends BaseController
 
     public function buscar()
     {
-        return view('buscar');
+        $doenca = Doenca::all();
+        $fabricante = Fabricante::all();
+        return view('vacinas',compact('doenca','fabricante'));
+    }
+
+    public function cadastroFabricante(Http\Request $request)
+    {
+        $data = $request->all();
+
+        Fabricante::create($data);
+        return redirect((route('vacina')));
+
+    }
+
+    public function cadastroDoenca(Http\Request $request)
+    {
+        $data = $request->all();
+
+        Doenca::create($data);
+        return redirect((route('vacina')));
+
+    }
+    public function cadastroVacina(Http\Request $request)
+    {
+        $data = $request->all();
+
+        Vacina::create($data);
+        return redirect((route('vacina')));
+
     }
 }

@@ -11,4 +11,9 @@ class Distrito extends Model
     protected $fillable = [
         'descricao_distrito'
     ];
+
+    public function pessoas()
+    {
+        return $this->hasMany(Pessoa::class,'id_distrito','id_distrito');
+    }
 }

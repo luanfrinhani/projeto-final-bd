@@ -11,4 +11,10 @@ class Fabricante extends Model
     protected $fillable = [
         'descricao_fabricante'
     ];
+
+    public function vacinas()
+    {
+        return $this->hasMany(Vacina::class,'id_fabricante','id_fabricante');
+    }
+
 }

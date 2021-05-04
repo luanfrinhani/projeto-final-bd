@@ -9,7 +9,7 @@ class Vacina extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'lote','id_fabricante','nome_vacina','quantidade_doses_necessarias','id_doenca',
+        'id_fabricante','nome_vacina','quantidade_doses_necessarias','id_doenca',
     ];
 
     public function doencas()

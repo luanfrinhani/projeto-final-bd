@@ -11,4 +11,9 @@ class Doenca extends Model
     protected $fillable = [
         'descricao_doenca'
     ];
+
+    public function vacinas()
+    {
+        return $this->hasMany(Vacina::class,'id_doenca','id_doenca');
+    }
 }

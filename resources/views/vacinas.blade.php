@@ -3853,101 +3853,55 @@
     </div>
 </div>
 
-{{--<div class="container-contact100">--}}
-{{--    <div class="wrap-contact100">--}}
-{{--        <form class="contact100-form validate-form"  action="{{route('racaCorEtnia')}}" method="POST">--}}
-{{--            @csrf--}}
-{{--            <span class="contact100-form-title">--}}
-{{--                    Cadastro Raça, Cor e Etnia--}}
-{{--                </span>--}}
+{{--Cadastro vacina lotes--}}
+<div class="container-contact100">
+    <div class="wrap-contact100">
+        <form class="contact100-form validate-form"  action="{{route('vacinalote')}}" method="POST">
+            @csrf
+            <span class="contact100-form-title">
+                    Cadastro Vacina Lotes
+                </span>
 
-{{--            <div class="wrap-input100 validate-input bg1" data-validate="Entre com a raça, cor e etnia">--}}
-{{--                <span class="label-input100">Raça, Cor Etnia*</span>--}}
-{{--                <input class="input100" type="text" name="descricao_raca_cor_etinia" >--}}
-{{--            </div>--}}
+            <div class="wrap-input100 input100-select bg1">
+                <span class="label-input100">Vacina*</span>
+                <div>
+                    <select class="js-select2" name="id_vacina">
+                        <option value ="" selected disabled hidden>Selecione</option>
+                        @foreach($vacina as $vacinas)
+                            <option value="{{$vacinas->id_vacina}}">{{$vacinas->nome_vacina}}</option>
+                        @endforeach
+                    </select>
 
-{{--            <button class="contact100-form-btn" type="submit">--}}
-{{--                        <span>--}}
-{{--                            Submit--}}
-{{--                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>--}}
-{{--                        </span>--}}
-{{--            </button>--}}
-{{--        </form>--}}
-{{--    </div>--}}
-{{--</div>--}}
+                    <div class="dropDownSelect2"></div>
+                </div>
+            </div>
 
+            <div class="wrap-input100 input100-select bg1">
+                <span class="label-input100">Lote*</span>
+                <div>
+                    <select class="js-select2" name="id_lote">
+                        <option value ="" selected disabled hidden>Selecione</option>
+                        @foreach($lote as $lotes)
+                            <option value="{{$lotes->id_lote}}">{{$lotes->numero_lote}}</option>
+                        @endforeach
+                    </select>
 
-{{--<div class="container-contact100">--}}
-{{--    <div class="wrap-contact100">--}}
-{{--        <form class="contact100-form validate-form"  action="{{route('planosaude')}}" method="POST">--}}
-{{--            @csrf--}}
-{{--            <span class="contact100-form-title">--}}
-{{--                    Cadastro Plano de Saúde--}}
-{{--                </span>--}}
+                    <div class="dropDownSelect2"></div>
+                </div>
+            </div>
 
-{{--            <div class="wrap-input100 validate-input bg1" data-validate="Entre com o plano de saúde">--}}
-{{--                <span class="label-input100">Plano de Saúde*</span>--}}
-{{--                <input class="input100" type="text" name="descricao_plano_saude" >--}}
-{{--            </div>--}}
-
-{{--            <button class="contact100-form-btn" type="submit">--}}
-{{--                        <span>--}}
-{{--                            Submit--}}
-{{--                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>--}}
-{{--                        </span>--}}
-{{--            </button>--}}
-{{--        </form>--}}
-{{--    </div>--}}
-{{--</div>--}}
-
-{{--<div class="container-contact100">--}}
-{{--    <div class="wrap-contact100">--}}
-{{--        <form class="contact100-form validate-form"  action="{{route('alergia')}}" method="POST">--}}
-{{--            @csrf--}}
-{{--            <span class="contact100-form-title">--}}
-{{--                    Cadastro Alergia--}}
-{{--                </span>--}}
-
-{{--            <div class="wrap-input100 validate-input bg1" data-validate="Entre com a alergia">--}}
-{{--                <span class="label-input100">Alergia*</span>--}}
-{{--                <input class="input100" type="text" name="descricao_alergia" >--}}
-{{--            </div>--}}
-
-{{--            <button class="contact100-form-btn" type="submit">--}}
-{{--                        <span>--}}
-{{--                            Submit--}}
-{{--                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>--}}
-{{--                        </span>--}}
-{{--            </button>--}}
-{{--        </form>--}}
-{{--    </div>--}}
-{{--</div>--}}
-
-{{--<div class="container-contact100">--}}
-{{--    <div class="wrap-contact100">--}}
-{{--        <form class="contact100-form validate-form"  action="{{route('distrito')}}" method="POST">--}}
-{{--            @csrf--}}
-{{--            <span class="contact100-form-title">--}}
-{{--                    Cadastro Distrito--}}
-{{--                </span>--}}
-
-{{--            <div class="wrap-input100 validate-input bg1" data-validate="Entre com o distrito">--}}
-{{--                <span class="label-input100">Distrito*</span>--}}
-{{--                <input class="input100" type="text" name="descricao_distrito" >--}}
-{{--            </div>--}}
-
-{{--            <button class="contact100-form-btn" type="submit">--}}
-{{--                        <span>--}}
-{{--                            Submit--}}
-{{--                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>--}}
-{{--                        </span>--}}
-{{--            </button>--}}
-{{--        </form>--}}
-{{--    </div>--}}
-{{--</div>--}}
+            <button class="contact100-form-btn" type="submit">
+                        <span>
+                            Submit
+                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                        </span>
+            </button>
+        </form>
+    </div>
+</div>
 
 
-{{--</div>--}}
+
 
 
 

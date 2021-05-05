@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','\App\Http\Controllers\Controller@cadastroPessoa')->name('cadastro');
 Route::get('/admin','\App\Http\Controllers\Controller@cadastroCaracteristica')->name('admin');
 Route::get('/vacina','\App\Http\Controllers\Controller@buscar')->name('vacina');
+Route::get('/lote','\App\Http\Controllers\Controller@lote')->name('lote');
 
 Route::post('/admin/estadocivil','\App\Http\Controllers\Controller@cadastrarEstadoCivil')->name('estadocivil');
 Route::post('/admin/escolaridade','\App\Http\Controllers\Controller@cadastrarEscolaridade')->name('escolaridade');
@@ -28,6 +29,9 @@ Route::post('/pessoa','\App\Http\Controllers\Controller@cadastrarPessoa')->name(
 Route::post('/vacina/cadastroFabricante','\App\Http\Controllers\Controller@cadastroFabricante')->name('cadastroFabricante');
 Route::post('/vacina/cadastroDoenca','\App\Http\Controllers\Controller@cadastroDoenca')->name('cadastroDoenca');
 Route::post('/vacina/cadastroVacina','\App\Http\Controllers\Controller@cadastroVacina')->name('cadastroVacina');
+Route::post('/vacinacao','\App\Http\Controllers\Controller@pessoaVacina')->name('cadastroVacinaPessoa');
+Route::post('/lote/cadastroLote','\App\Http\Controllers\Controller@cadastroLote')->name('cadastroLote');
+Route::post('/vacina/vacinalote','\App\Http\Controllers\Controller@cadastroVacinaLotes')->name('vacinalote');
 
 
 

@@ -14,17 +14,18 @@ class CreateVacinaLotesTable extends Migration
     public function up()
     {
         Schema::create('vacina_lotes', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_vacina')->nullable(false)->primary();
-            $table->unsignedBigInteger('lote_vacina')->nullable(false);
-            $table->date('data_compra')->nullable(false);
-            $table->date('data_fabricancacao')->nullable(false);
-            $table->date('data_validade')->nullable(false);
+            $table->bigIncrements('id_vacina_lote')->nullable(false);
+            $table->unsignedBigInteger('id_lote')->nullable(false);
+            $table->unsignedBigInteger('id_vacina')->nullable(false);
+
             $table->timestamps();
 
-            $table->foreign('id_vacina')->references('id_vacina')->on('vacinas');
+            $table->foreign('id_vacina')->references('id_vacina')->on('vacinas')->onDelete('cascade');
+            $table->foreign('id_lote')->references('id_lote')->on('lotes')->onDelete('cascade');
+
 
             $table->index('id_vacina');
-            $table->index('lote_vacina');
+
         });
     }
 

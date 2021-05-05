@@ -8,11 +8,14 @@ use App\Models\Doenca;
 use App\Models\Escolaridade;
 use App\Models\EstadoCivil;
 use App\Models\Fabricante;
+use App\Models\Lote;
 use App\Models\Pessoa;
+use App\Models\PessoaVacina;
 use App\Models\PlanoSaude;
 use App\Models\racaCorEtinia;
 use App\Models\Religiao;
 use App\Models\Vacina;
+use App\Models\VacinaLotes;
 use Dotenv\Repository\Adapter\EnvConstAdapter;
 use http\Env\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -35,8 +38,14 @@ class Controller extends BaseController
         $alergia = Alergia::all();
         $distrito = Distrito::all();
         $raca_cor_etinia = racaCorEtinia::all();
+        $vacina_lote = VacinaLotes::all();
+        $pessoa = Pessoa::all();
+        $vacina = Vacina::all();
+        $lote = Lote::all();
+//        dd($vacina_lote);
 
-        return view('pessoa',compact('estado_civil','escolaridade','religiao','plano_saude','alergia','distrito','raca_cor_etinia'));
+        return view('pessoa',compact('estado_civil','escolaridade','religiao','plano_saude','alergia','distrito','raca_cor_etinia',
+                    'vacina_lote','pessoa','vacina','lote'));
     }
 
     public function cadastroCaracteristica()
@@ -117,7 +126,10 @@ class Controller extends BaseController
     {
         $doenca = Doenca::all();
         $fabricante = Fabricante::all();
-        return view('vacinas',compact('doenca','fabricante'));
+        $vacina = Vacina::all();
+        $lote = Lote::all();
+        //dd($vacina);
+        return view('vacinas',compact('doenca','fabricante','lote','vacina'));
     }
 
     public function cadastroFabricante(Http\Request $request)
@@ -144,5 +156,35 @@ class Controller extends BaseController
         Vacina::create($data);
         return redirect((route('vacina')));
 
+    }
+
+    public function pessoaVacina(Http\Request $request)
+    {
+        $data = $request->all();
+
+        PessoaVacina::create($data);
+
+        return redirect((route('cadastro')));
+
+    }
+
+    public function lote()
+    {
+
+        return view('lotes');
+    }
+
+    public function cadastroLote(Http\Request $request)
+    {
+        Lote::create($request->all());
+
+        return redirect((route('lote')));
+    }
+
+    public function cadastroVacinaLotes(Http\Request $request)
+    {
+        VacinaLotes::create($request->all());
+
+        return redirect((route('vacina')));
     }
 }

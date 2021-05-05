@@ -9,7 +9,7 @@ class Vacina extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id_fabricante','nome_vacina','quantidade_doses_necessarias','id_doenca',
+        'id_vacina', 'id_fabricante','nome_vacina','quantidade_doses_necessarias','id_doenca',
     ];
 
     public function doencas()
@@ -20,5 +20,10 @@ class Vacina extends Model
     public function fabricantes()
     {
         return $this->belongsTo(Fabricante::class,'id_fabricante');
+    }
+
+    public function vacina_lotes()
+    {
+        return $this->hasMany(VacinaLotes::class,'id_vacina');
     }
 }

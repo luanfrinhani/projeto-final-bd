@@ -3749,226 +3749,29 @@
 
 <div class="container-contact100">
     <div class="wrap-contact100">
-        <form class="contact100-form validate-form" method="POST" action="{{route('pessoa')}}">
-            @csrf
-				<span class="contact100-form-title">
-					Cadastro Pessoa
-				</span>
-
-            <div class="wrap-input100 validate-input bg1" data-validate="Entre com o número do SUS">
-                <span class="label-input100">Número do SUS*</span>
-                <input class="input100" type="text" name="numero_sus" >
-            </div>
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com seu CPF">
-                <span class="label-input100">CPF *</span>
-                <input class="input100" type="text" name="cpf" >
-            </div>
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com seu nome">
-                <span class="label-input100">Nome Completo*</span>
-                <input class="input100" type="text" name="nome" >
-            </div>
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com seu nome">
-                <span class="label-input100">Idade*</span>
-                <input class="input100" type="number" name="idade" >
-            </div>
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com sua data de nascimento">
-                <span class="label-input100">Data Nascimento*</span>
-                <input class="input100" type="date" name="data_nascimento" >
-            </div>
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com o nome da mãe">
-                <span class="label-input100">Nome da mãe*</span>
-                <input class="input100" type="text" name="nome_mae" >
-            </div>
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com seu sexo genérico">
-                <span class="label-input100">Sexo genérico*</span>
-                <input class="input100" type="text" name="sexo_genetico" >
-            </div>
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com sua rua">
-                <span class="label-input100">Rua*</span>
-                <input class="input100" type="text" name="rua" >
-            </div>
-
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com o número da sua casa">
-                <span class="label-input100">Número*</span>
-                <input class="input100" type="number" name="numero" >
-            </div>
-
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com o seu bairro">
-                <span class="label-input100">Bairro*</span>
-                <input class="input100" type="text" name="bairro" >
-            </div>
-
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com o seu cep">
-                <span class="label-input100">CEP*</span>
-                <input class="input100" type="text" name="cep" >
-            </div>
-
-
-            <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Estado Civil*</span>
-                <div>
-                    <select class="js-select2" name="id_estado_civil">
-                        <option value ="" selected disabled hidden>Selecione</option>
-                        @foreach($estado_civil as $ec)
-                            <option value="{{$ec->id_estado_civil}}">{{$ec->descricao_estado_civil}}</option>
-                        @endforeach
-                    </select>
-                    <div class="dropDownSelect2"></div>
-                </div>
-            </div>
-
-
-            <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Escolaridade*</span>
-                <div>
-                    <select class="js-select2" name="id_escolaridade">
-                        <option value ="" selected disabled hidden>Selecione</option>
-                        @foreach($escolaridade as $escolaridades)
-                            <option value="{{$escolaridades->id_escolaridade}}">{{$escolaridades->descricao_escolaridade}}</option>
-                        @endforeach
-                    </select>
-
-                    <div class="dropDownSelect2"></div>
-                </div>
-            </div>
-
-
-            <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Religião*</span>
-                <div>
-                    <select class="js-select2" name="id_religiao">
-                        <option value ="" selected disabled hidden>Selecione</option>
-                        @foreach($religiao as $religiaos)
-                            <option value="{{$religiaos->id_religiao}}">{{$religiaos->descricao_religiao}}</option>
-                        @endforeach
-                    </select>
-
-                    <div class="dropDownSelect2"></div>
-                </div>
-            </div>
-
-
-            <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Raça, cor e etinia*</span>
-                <div>
-                    <select class="js-select2" name="id_raca_cor_etinia">
-                        <option value ="" selected disabled hidden>Selecione</option>
-                        @foreach($raca_cor_etinia as $raca_cor_etinias)
-                            <option value="{{$raca_cor_etinias->id_raca_cor_etinia}}">{{$raca_cor_etinias->descricao_raca_cor_etinia}}</option>
-                        @endforeach
-                    </select>
-
-                    <div class="dropDownSelect2"></div>
-                </div>
-            </div>
-
-            <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Plano de Saúde*</span>
-                <div>
-                    <select class="js-select2" name="id_plano_saude">
-                        <option value ="" selected disabled hidden>Selecione</option>
-                        @foreach($plano_saude as $plano_saudes)
-                            <option value="{{$plano_saudes->id_plano_saude}}">{{$plano_saudes->descricao_plano_saude}}</option>
-                        @endforeach
-                    </select>
-                    <div class="dropDownSelect2"></div>
-                </div>
-            </div>
-
-
-            <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Alergia*</span>
-                <div>
-                    <select class="js-select2" name="id_alergia">
-                        <option value ="" selected disabled hidden>Selecione</option>
-                        @foreach($alergia as $alergias)
-                            <option value="{{$alergias->id_alergia}}">{{$alergias->descricao_alergia}}</option>
-                        @endforeach
-                    </select>
-
-                    <div class="dropDownSelect2"></div>
-                </div>
-            </div>
-
-
-            <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Distrito*</span>
-                <div>
-                    <select class="js-select2" name="id_distrito">
-                        <option value ="" selected disabled hidden>Selecione</option>
-                        @foreach($distrito as $distritos)
-                            <option value="{{$distritos->id_distrito}}">{{$distritos->descricao_distrito}}</option>
-                        @endforeach
-                    </select>
-
-                    <div class="dropDownSelect2"></div>
-                </div>
-            </div>
-
-
-
-            <div class="container-contact100-form-btn">
-                <button class="contact100-form-btn" type="submit">
-						<span>
-							Submit
-							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-						</span>
-                </button>
-            </div>
-        </form>
-    </div>
-</div>
-<div class="container-contact100">
-    <div class="wrap-contact100">
-        <form class="contact100-form validate-form" method="POST" action="{{route('cadastroVacinaPessoa')}}">
+        <form class="contact100-form validate-form" method="POST" action="{{route('cadastroLote')}}">
             @csrf
             <span class="contact100-form-title">
-					Vacina
+					Cadastro Lotes
 				</span>
-            <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Numero SUS*</span>
-                <div>
-                    <select class="js-select2" name="numero_sus">
-                        <option value ="" selected disabled hidden>Selecione</option>
-                        @foreach($pessoa as $pessoas)
-                            <option value="{{$pessoas->numero_sus}}">{{$pessoas->numero_sus}}</option>
-                        @endforeach
-                    </select>
-                    <div class="dropDownSelect2"></div>
-                </div>
+            <div class="wrap-input100 validate-input bg1" data-validate="Entre com o lote da vacina">
+                <span class="label-input100">Número do Lote*</span>
+                <input class="input100" type="text" name="numero_lote" >
             </div>
 
-            <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Lote vacina*</span>
-                <div>
-                    <select class="js-select2" name="id_vacina_lote">
-                        <option value ="" selected disabled hidden>Selecione</option>
-                        @foreach($vacina_lote as $vacina_lotes)
-                            <option value="{{$vacina_lotes->id_vacina_lote}}">{{$vacina->where('id_vacina',$vacina_lotes->id_vacina)->first()['nome_vacina']}}
-                                {{$lote->where('id_lote',$vacina_lotes->id_lote)->first()['numero_lote']}}</option>
-                        @endforeach
-                    </select>
-                    <div class="dropDownSelect2"></div>
-                </div>
+            <div class="wrap-input100 validate-input bg1" data-validate="Entre com a data da fabricação">
+                <span class="label-input100">Data fabricação*</span>
+                <input class="input100" type="date" name="data_fabricacao" >
             </div>
 
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com a data da dose">
-                <span class="label-input100">Data da Dose*</span>
-                <input class="input100" type="date" name="data_dose" >
+            <div class="wrap-input100 validate-input bg1" data-validate="Entre com a data da validade">
+                <span class="label-input100">Data validade*</span>
+                <input class="input100" type="date" name="data_validade" >
             </div>
 
-            <div class="wrap-input100 validate-input bg1" data-validate = "Entre com a dose">
-                <span class="label-input100">Dose*</span>
-                <input class="input100" type="number" name="dose">
+            <div class="wrap-input100 validate-input bg1" data-validate="Entre com a data da compra">
+                <span class="label-input100">Data compra*</span>
+                <input class="input100" type="date" name="data_compra" >
             </div>
 
             <div class="container-contact100-form-btn">
@@ -3979,11 +3782,9 @@
 						</span>
                 </button>
             </div>
-
         </form>
     </div>
 </div>
-
 
 
 <!--===============================================================================================-->

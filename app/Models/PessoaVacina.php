@@ -9,7 +9,7 @@ class PessoaVacina extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'numero_sus', 'lote_vacina', 'data_dose', 'dose'
+        'id_vacina_lote', 'numero_sus', 'id_lote', 'data_dose', 'dose'
     ];
 
     public function pessoas()
@@ -19,7 +19,7 @@ class PessoaVacina extends Model
 
     public function vacina_lotes()
     {
-        return $this->belongsTo(VacinaLotes::class,'lote_vacina');
+        return $this->belongsTo(VacinaLotes::class,'id_vacina_lote');
 
     }
 }

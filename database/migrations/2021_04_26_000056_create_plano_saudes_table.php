@@ -15,7 +15,7 @@ class CreatePlanoSaudesTable extends Migration
     {
         Schema::create('plano_saudes', function (Blueprint $table) {
             $table->bigIncrements('id_plano_saude');
-            $table->string('descricao_plano_saude',45)->nullable(false);
+            $table->string('descricao_plano_saude',45)->nullable(false)->unique();
             $table->timestamps();
         });
     }

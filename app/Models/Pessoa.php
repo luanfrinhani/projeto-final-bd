@@ -12,7 +12,7 @@ class Pessoa extends Model
     protected $fillable = [
         'numero_sus', 'cpf', 'nome', 'idade', 'data_nascimento', 'nome_mae', 'sexo_genetico',
         'rua','numero','bairro','cep', 'id_estado_civil', 'id_escolaridade', 'id_religiao',
-        'id_raca_cor_etinia', 'id_plano_saude', 'id_alergia','id_distrito'
+        'id_raca_cor_etnia', 'id_plano_saude', 'id_alergia','id_distrito'
     ];
 
 
@@ -36,10 +36,10 @@ class Pessoa extends Model
     }
 
 
-    public function raca_cor_etinias()
+    public function raca_cor_etnias()
     {
 
-        return $this->belongsTo(racaCorEtinia::class, 'id_raca_cor_etinia');
+        return $this->belongsTo(RacaCorEtnia::class, 'id_raca_cor_etnia');
 
     }
 

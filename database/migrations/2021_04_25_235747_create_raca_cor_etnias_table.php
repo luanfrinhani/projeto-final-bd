@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRacaCorEtiniasTable extends Migration
+class CreateRacaCorEtniasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateRacaCorEtiniasTable extends Migration
      */
     public function up()
     {
-        Schema::create('raca_cor_etinias', function (Blueprint $table) {
-            $table->bigIncrements('id_raca_cor_etinia');
-            $table->string('descricao_raca_cor_etinia',45)->nullable(false);
+        Schema::create('raca_cor_etnias', function (Blueprint $table) {
+            $table->bigIncrements('id_raca_cor_etnia');
+            $table->string('descricao_raca_cor_etnia',45)->nullable(false);
             $table->timestamps();
+
+            $table->index('descricao_raca_cor_etnia');
         });
     }
 
@@ -27,6 +29,6 @@ class CreateRacaCorEtiniasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('raca_cor_etinias');
+        Schema::dropIfExists('raca_cor_etnias');
     }
 }

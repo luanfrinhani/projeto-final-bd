@@ -17,6 +17,9 @@ class CreateFabricantesTable extends Migration
             $table->bigIncrements('id_fabricante');
             $table->string('descricao_fabricante',45)->nullable(false);
             $table->timestamps();
+
+            $table->index('descricao_fabricante');
+
         });
     }
 

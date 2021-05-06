@@ -25,6 +25,7 @@ class CreateVacinaLotesTable extends Migration
 
 
             $table->index('id_vacina');
+            $table->index('id_lote');
 
         });
     }

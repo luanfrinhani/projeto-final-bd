@@ -15,7 +15,7 @@ class CreateReligiaosTable extends Migration
     {
         Schema::create('religiaos', function (Blueprint $table) {
             $table->bigIncrements('id_religiao');
-            $table->string('descricao_religiao',45)->nullable(false);
+            $table->string('descricao_religiao',45)->nullable(false)->unique();
             $table->timestamps();
         });
     }

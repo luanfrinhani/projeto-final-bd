@@ -15,7 +15,7 @@ class CreateEstadoCivilsTable extends Migration
     {
         Schema::create('estado_civils', function (Blueprint $table) {
             $table->bigIncrements('id_estado_civil');
-            $table->string('descricao_estado_civil',45)->nullable(false);
+            $table->string('descricao_estado_civil',45)->nullable(false)->unique();
             $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ class CreateDistritosTable extends Migration
     {
         Schema::create('distritos', function (Blueprint $table) {
             $table->bigIncrements('id_distrito');
-            $table->string('descricao_distrito',45)->nullable(false);
+            $table->string('descricao_distrito',45)->nullable(false)->unique();
             $table->timestamps();
         });
     }

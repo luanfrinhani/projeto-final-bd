@@ -32,7 +32,7 @@ class CreatePessoasTable extends Migration
             $table->unsignedBigInteger('id_estado_civil')->nullable(false);
             $table->unsignedBigInteger('id_escolaridade')->nullable(false);
             $table->unsignedBigInteger('id_religiao')->nullable(false);
-            $table->unsignedBigInteger('id_raca_cor_etinia')->nullable(false);
+            $table->unsignedBigInteger('id_raca_cor_etnia')->nullable(false);
             $table->unsignedBigInteger('id_plano_saude')->nullable(false);
             $table->unsignedBigInteger('id_alergia')->nullable(false);
             $table->unsignedBigInteger('id_distrito')->nullable(false);
@@ -41,7 +41,7 @@ class CreatePessoasTable extends Migration
             $table->foreign('id_estado_civil')->references('id_estado_civil')->on('estado_civils')->onDelete('cascade');
             $table->foreign('id_escolaridade')->references('id_escolaridade')->on('escolaridades')->onDelete('cascade');
             $table->foreign('id_religiao')->references('id_religiao')->on('religiaos')->onDelete('cascade');
-            $table->foreign('id_raca_cor_etinia')->references('id_raca_cor_etinia')->on('raca_cor_etinias')->onDelete('cascade');
+            $table->foreign('id_raca_cor_etnia')->references('id_raca_cor_etnia')->on('raca_cor_etnias')->onDelete('cascade');
             $table->foreign('id_plano_saude')->references('id_plano_saude')->on('plano_saudes')->onDelete('cascade');
             $table->foreign('id_alergia')->references('id_alergia')->on('alergias')->onDelete('cascade');
             $table->foreign('id_distrito')->references('id_distrito')->on('distritos')->onDelete('cascade');
@@ -54,7 +54,7 @@ class CreatePessoasTable extends Migration
             $table->index('id_escolaridade');
             $table->index('id_estado_civil');
             $table->index('id_religiao');
-            $table->index('id_raca_cor_etinia');
+            $table->index('id_raca_cor_etnia');
             $table->index('id_plano_saude');
             $table->index('id_alergia');
             $table->index('id_distrito');

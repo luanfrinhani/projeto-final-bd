@@ -16,7 +16,7 @@ class CreateVacinasTable extends Migration
         Schema::create('vacinas', function (Blueprint $table) {
             $table->bigIncrements('id_vacina')->nullable(false);
             $table->unsignedBigInteger('id_fabricante')->nullable(false);
-            $table->string('nome_vacina',45)->nullable(false);
+            $table->string('nome_vacina',45)->nullable(false)->unique();
             $table->integer('quantidade_doses_necessarias')->nullable(false);
             $table->unsignedBigInteger('id_doenca')->nullable(false);
 
@@ -26,6 +26,9 @@ class CreateVacinasTable extends Migration
 
             $table->unique('nome_vacina','tipo_vacina_UNIQUE');
 
+            $table->index('id_doenca');
+            $table->index('id_fabricante');
+            $table->index('nome_vacina');
 
 
 

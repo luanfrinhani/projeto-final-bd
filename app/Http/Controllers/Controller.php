@@ -12,7 +12,7 @@ use App\Models\Lote;
 use App\Models\Pessoa;
 use App\Models\PessoaVacina;
 use App\Models\PlanoSaude;
-use App\Models\racaCorEtinia;
+use App\Models\racaCorEtnia;
 use App\Models\Religiao;
 use App\Models\Vacina;
 use App\Models\VacinaLotes;
@@ -37,7 +37,7 @@ class Controller extends BaseController
         $plano_saude = PlanoSaude::all();
         $alergia = Alergia::all();
         $distrito = Distrito::all();
-        $raca_cor_etinia = racaCorEtinia::all();
+        $raca_cor_etinia = racaCorEtnia::all();
         $vacina_lote = VacinaLotes::all();
         $pessoa = Pessoa::all();
         $vacina = Vacina::all();
@@ -81,7 +81,7 @@ class Controller extends BaseController
     {
         $data = $request->all();
 
-        $racacoretnia = racaCorEtinia::create($data);
+        $racacoretnia = racaCorEtnia::create($data);
 
         return redirect(route('admin'));
 

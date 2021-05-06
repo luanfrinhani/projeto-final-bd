@@ -17,6 +17,7 @@ class CreateDoencasTable extends Migration
             $table->bigIncrements('id_doenca');
             $table->string('descricao_doenca',45)->nullable(false);
             $table->timestamps();
+            $table->index('descricao_doenca');
         });
     }
 

@@ -15,7 +15,7 @@ class CreateAlergiasTable extends Migration
     {
         Schema::create('alergias', function (Blueprint $table) {
             $table->bigIncrements('id_alergia');
-            $table->string('descricao_alergia',45)->nullable(false);
+            $table->string('descricao_alergia',45)->nullable(false)->unique();
             $table->timestamps();
         });
     }

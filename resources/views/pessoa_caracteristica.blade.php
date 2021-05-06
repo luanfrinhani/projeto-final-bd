@@ -3825,7 +3825,7 @@
 
             <div class="wrap-input100 validate-input bg1" data-validate="Entre com a raça, cor e etnia">
                 <span class="label-input100">Raça, Cor Etnia*</span>
-                <input class="input100" type="text" name="descricao_raca_cor_etinia" >
+                <input class="input100" type="text" name="descricao_raca_cor_etnia" >
             </div>
 
             <button class="contact100-form-btn" type="submit">

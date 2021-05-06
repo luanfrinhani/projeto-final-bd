@@ -3860,10 +3860,10 @@
             <div class="wrap-input100 input100-select bg1">
                 <span class="label-input100">Raça, cor e etinia*</span>
                 <div>
-                    <select class="js-select2" name="id_raca_cor_etinia">
+                    <select class="js-select2" name="id_raca_cor_etnia">
                         <option value ="" selected disabled hidden>Selecione</option>
                         @foreach($raca_cor_etinia as $raca_cor_etinias)
-                            <option value="{{$raca_cor_etinias->id_raca_cor_etinia}}">{{$raca_cor_etinias->descricao_raca_cor_etinia}}</option>
+                            <option value="{{$raca_cor_etinias->id_raca_cor_etnia}}">{{$raca_cor_etinias->descricao_raca_cor_etnia}}</option>
                         @endforeach
                     </select>
 
